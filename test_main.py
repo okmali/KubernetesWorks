@@ -8,7 +8,7 @@ import pytest
 import main
 
 SECRET = 'myjwtsecret'
-TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU1Mjg2MDcsIm5iZiI6MTY0NDMxOTAwNywiZW1haWwiOiJhYmNAeHl6LmNvbSJ9.jPN7zBDRwi0VCiowJlNOOGIQrMj02A6C7a8UMOUP59'
+TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDU1Mjg2MDcsIm5iZiI6MTY0NDMxOTAwNywiZW1haWwiOiJhYmNAeHl6LmNvbSJ9.jPN7zBDRwi0VCiowJlNOOGIQrMj02A6C7a8UMOUP59E'
 EMAIL = 'abc@xyz.com'
 PASSWORD = 'mypwd'
 
@@ -26,6 +26,7 @@ def test_health(client):
     response = client.get('/')
     assert response.status_code == 200
     assert response.json == 'Healthy'
+    assert False
 
 
 def test_auth(client):
